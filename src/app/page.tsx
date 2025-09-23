@@ -395,7 +395,7 @@ function Card({ project, onImageClick }: { project: Project; onImageClick: (imag
       tabIndex={0}
     >
       <div className="absolute inset-0 rounded-2xl pointer-events-none group-hover:scale-[1.03] group-hover:shadow-[0_12px_40px_0_rgba(0,255,255,0.25),0_2px_16px_0_#0ff_inset] transition-transform transition-shadow duration-300 z-[-1]" />
-  <div className="w-full">
+      <div className="w-full">
         <div className="flex gap-2 overflow-x-auto py-2 px-2">
           {project.screenshots.map((src, i) => (
             <img
@@ -419,11 +419,10 @@ function Card({ project, onImageClick }: { project: Project; onImageClick: (imag
                 className={`inline-block w-3 h-3 rounded-full border-2 border-zinc-800 shadow-md transition-colors duration-200 ${activeScreenshot === i ? 'bg-blue-400 scale-110' : 'bg-zinc-600'}`}
               ></span>
             ))}
-            {/* <span className="ml-2 text-zinc-400 text-base">&#8594;</span> */}
           </div>
         )}
       </div>
-  <div className="flex-1 flex flex-col p-6">
+      <div className="flex-1 flex flex-col px-2 py-2">
         <h3 className="text-xl font-semibold text-white mb-2">
           {project.title}
         </h3>
@@ -437,13 +436,9 @@ function Card({ project, onImageClick }: { project: Project; onImageClick: (imag
             </span>
           ))}
         </div>
-                <p className="text-zinc-300 mb-2">
+        <p className="text-zinc-300 mb-2">
           {project.description}
         </p>
-        {/* <div className="mb-2">
-          <span className="block text-sm font-semibold text-zinc-200 mb-1">Details:</span>
-          <p className="text-xs text-zinc-400">{project.details}</p>
-        </div> */}
         <div className="flex flex-wrap gap-4 mt-auto">
           {project.github && (
             <a
@@ -494,7 +489,7 @@ function Card({ project, onImageClick }: { project: Project; onImageClick: (imag
           )}
         </div>
       </div>
-  </div>
+    </div>
   );
 }
 
