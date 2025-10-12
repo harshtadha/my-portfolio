@@ -59,6 +59,30 @@ export const projects: Project[] = [
 
   },
   {
+    title: "Deal-Mart ( Web and Mobile App )",
+    description: "Deal Mart is a modern marketplace web application built with React, featuring a complete authentication flow (login, signup, resend code, logout) and seamless API integration for real-time data. It includes a dynamic home page displaying marketplace listings, a personalized user dashboard showing account information and activities, and a support page explaining the platform. The project demonstrates strong frontend development skills with secure authentication, state management, and clean UI design.",
+    details: "This application allows users to browse products, add to cart, checkout with payment integration, and track orders. Built for both Android and iOS with a scalable backend on Firebase and GCP.",
+    screenshots: [ 
+      "/dealmart/1.png",
+      "/dealmart/2.png",
+      "/dealmart/3.png",
+   
+      "/dealmart/5.png",
+    
+      "/dealmart/7.png",
+         "/dealmart/4.png",
+           "/dealmart/6.png",
+      "/dealmart/8.png",
+      "/dealmart/9.png", 
+      "/dealmart/10.png", 
+      "/dealmart/11.png", 
+    ],
+    tech: ["React Native",'React',"Next.js", "TypeScript", "JavaScript (ES6)", "Tailwind CSS","CSS"],
+    // playstore: "https://play.google.com/store/apps/details?id=com.aoe2companion",
+    // appstore: "https://apps.apple.com/us/app/aoe-ii-companion/id1518463195",
+    github:'https://github.com/harshtadha/Deal-Mart'
+  },
+  {
     title: "AoE II Companion",
     description: "This app is a complete companion for strategy game players, helping you track performance, explore data, and improve gameplay. You can follow other players to see their recent matches and stats, or enter your Steam/Xbox username to view your profile with ratings, match history, and insights into your most played civilizations, maps, and allies. The app includes player search, detailed leaderboards. It also offers in-depth sections for Civilizations, Units, and Techs, providing details on bonuses, stats, upgrades, and counters. Everything you need to analyze progress and refine your strategy—all in one place.",
     details: "This application allows users to browse products, add to cart, checkout with payment integration, and track orders. Built for both Android and iOS with a scalable backend on Firebase and GCP.",
