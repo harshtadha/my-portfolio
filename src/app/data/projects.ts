@@ -80,7 +80,8 @@ export const projects: Project[] = [
     tech: ["React Native",'React',"Next.js", "TypeScript", "JavaScript (ES6)", "Tailwind CSS","CSS"],
     // playstore: "https://play.google.com/store/apps/details?id=com.aoe2companion",
     // appstore: "https://apps.apple.com/us/app/aoe-ii-companion/id1518463195",
-    github:'https://github.com/harshtadha/Deal-Mart'
+    github:'https://github.com/harshtadha/Deal-Mart',
+    demo: "https://deal-mart-web-app.vercel.app/"
   },
   {
     title: "AoE II Companion",
