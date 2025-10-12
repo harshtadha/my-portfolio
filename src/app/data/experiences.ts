@@ -9,7 +9,7 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
-    title: 'Full Stack Developer - React Native/React',
+    title: 'Full Stack Developer - Mobile & Web Development',
     company: 'Nisum Canada Inc.',
     period: 'May 2024 - Jaly 2025',
     section: 'Work',
@@ -40,7 +40,7 @@ export const experiences: Experience[] = [
     section: 'Work',
     description: [
       'Contributed to full-stack development of mobile and web apps using React, React Native, Redux, and Node.js.',
-      'Assisted in building and maintaining cross-platform mobile apps using React Native, JavaScript, and TypeScript.',
+      'Assisted in building and maintaining cross-platfor m mobile apps using React Native, JavaScript, and TypeScript.',
       'Participated in app deployment for Android and iOS using Android Studio and Xcode.',
       'Helped implement push notifications, deep linking, and optimized app performance.',
     ]

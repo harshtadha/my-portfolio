@@ -115,7 +115,7 @@ function ExperienceSection() {
             </div>
             <div className="flex-1">
               <div className="bg-gradient-to-br from-[#23233a] via-[#1e293b] to-[#0f172a] rounded-xl shadow-2xl p-4 sm:p-6 mb-2 border border-zinc-900 relative z-20" style={cardVars}>
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-1 sm:gap-0"style={{borderColor:'#7dd3fc',borderWidth:'0.01rem',padding:'0.5rem',borderRadius:'0.5rem' }}>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-1 sm:gap-0">
 
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                     <span className="text-base sm:text-lg font-bold text-white mr-0 sm:mr-2 font-sans">{exp.title}</span>
@@ -126,7 +126,7 @@ function ExperienceSection() {
                     {exp.period}
                   </span>
                 </div>
-                <div className="text-zinc-300 text-sm sm:text-base leading-relaxed font-sans">
+                <div className="text-zinc-500 text-sm sm:text-base leading-relaxed font-sans">
                   {exp.description}
                 </div>
               </div>
@@ -158,7 +158,7 @@ function ExperienceSection() {
             </div>
               <div className="flex-1">
               <div className="bg-gradient-to-br from-[#23233a] via-[#1e293b] to-[#0f172a] rounded-xl shadow-2xl p-4 sm:p-6 mb-2 border border-zinc-900 relative z-20" style={cardVars}>
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-1 sm:gap-0" style={{borderColor:'#7dd3fc',borderWidth:'0.01rem',padding:'0.5rem',borderRadius:'0.5rem' }}>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-1 sm:gap-0">
                     <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                       <span className="text-base sm:text-lg font-bold text-white mr-0 sm:mr-2 font-sans">{exp.title}</span>
                       <span className="text-xs sm:text-base text-zinc-400 font-semibold font-sans">@ {exp.company}{exp.location ? `, ${exp.location}` : ''}</span>
@@ -168,7 +168,7 @@ function ExperienceSection() {
                       {exp.period}
                     </span>
                   </div>
-                  <div className="text-zinc-300 text-sm sm:text-base leading-relaxed font-sans" style={{ whiteSpace: 'pre-line', color: 'coolgray'}}>
+                  <div className="text-zinc-500 text-sm sm:text-base leading-relaxed font-sans" style={{ whiteSpace: 'pre-line', color: 'coolgray'}}>
                     {exp.description}
                   </div>
                 </div>
@@ -436,10 +436,10 @@ function Card({ project, onImageClick }: { project: Project; onImageClick: (imag
             </span>
           ))}
         </div>
-        <p className="text-zinc-300 mb-2">
+        <p className="text-zinc-400 mb-2">
           {project.description}
         </p>
-        <div className="flex flex-wrap gap-4 mt-auto">
+        <div className="flex flex-wrap gap-2 mt-auto">
           {project.github && (
             <a
               href={project.github}
@@ -447,7 +447,7 @@ function Card({ project, onImageClick }: { project: Project; onImageClick: (imag
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-sm text-zinc-300 hover:text-blue-400 font-medium transition-colors"
             >
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" className="inline-block"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98.01 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.43-2.69 5.41-5.25 5.7.42.36.79 1.09.79 2.2 0 1.59-.01 2.87-.01 3.26 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/></svg>
+              <svg width="25" height="25" fill="currentColor" viewBox="0 0 24 24" className="inline-block"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98.01 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.43-2.69 5.41-5.25 5.7.42.36.79 1.09.79 2.2 0 1.59-.01 2.87-.01 3.26 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/></svg>
               GitHub
             </a>
           )}
@@ -468,7 +468,7 @@ function Card({ project, onImageClick }: { project: Project; onImageClick: (imag
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold shadow-md border border-gray-300 transition-colors text-base"
-              style={{ minWidth: '140px', justifyContent: 'center' }}
+              style={{ minWidth: '120px', justifyContent: 'center' }}
             >
               {/* Google Play Store icon SVG */}
               <svg width="20" height="20" aria-hidden="true" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0,0h40v40H0V0z"></path><g><path d="M19.7,19.2L4.3,35.3c0,0,0,0,0,0c0.5,1.7,2.1,3,4,3c0.8,0,1.5-0.2,2.1-0.6l0,0l17.4-9.9L19.7,19.2z" fill="#EA4335"></path><path d="M35.3,16.4L35.3,16.4l-7.5-4.3l-8.4,7.4l8.5,8.3l7.5-4.2c1.3-0.7,2.2-2.1,2.2-3.6C37.5,18.5,36.6,17.1,35.3,16.4z" fill="#FBBC04"></path><path d="M4.3,4.7C4.2,5,4.2,5.4,4.2,5.8v28.5c0,0.4,0,0.7,0.1,1.1l16-15.7L4.3,4.7z" fill="#4285F4"></path><path d="M19.8,20l8-7.9L10.5,2.3C9.9,1.9,9.1,1.7,8.3,1.7c-1.9,0-3.6,1.3-4,3c0,0,0,0,0,0L19.8,20z" fill="#34A853"></path></g></svg>
@@ -496,6 +496,7 @@ function Card({ project, onImageClick }: { project: Project; onImageClick: (imag
 const profile = {
   name: "HARSH TADHA",
   title: "FULL-STACK SOFTWARE DEVELOPER | MOBILE - WEB DEVELOPER",
+  tech:'React Native | React.js | Next.Js ',
   email: "harshht2005@gmail.com",
   phone: "+1-705-669-9376",
   location: "CANADA",
@@ -730,6 +731,7 @@ export default function Home() {
               <span className="text-zinc-300"><strong>Email:</strong> <a href={`mailto:${profile.email}`} className="text-blue-400 hover:underline">{profile.email}</a></span>
               <span className="text-zinc-300"><strong>Phone:</strong> <a href={`tel:${profile.phone}`} className="text-blue-400 hover:underline">{profile.phone}</a></span>
               <span className="text-zinc-300"><strong>LinkedIn:</strong> <a href={"https://www.linkedin.com/in/harshtadha"} className="text-blue-400 hover:underline">{"linkedin.com/in/harshtadha"}</a></span>
+              <span className="text-zinc-300"><strong>GitHub:</strong> <a href={"https://github.com/harshtadha"} className="text-blue-400 hover:underline">{"github.com/harshtadha"}</a></span>
               <span className="text-zinc-300"><strong>{"Location:    "}</strong> {profile.location}</span>
             </div>
           </div>
