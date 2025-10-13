@@ -407,6 +407,8 @@ function Card({ project, onImageClick }: { project: Project; onImageClick: (imag
               onClick={() => { onImageClick(project.screenshots, i); setActiveScreenshot(i); }}
               onMouseEnter={() => setActiveScreenshot(i)}
               onMouseLeave={() => setActiveScreenshot(0)}
+               onTouchStart={() => setActiveScreenshot(i)}   // Mobile touch start
+  onTouchEnd={() => setActiveScreenshot(0)}     // Optional: reset when touch ends
               onError={e => { e.currentTarget.src = "https://placehold.co/300x200/23233a/fff?text=App+Screenshot"; }}
             />
           ))}
