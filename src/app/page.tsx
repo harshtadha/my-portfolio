@@ -509,7 +509,7 @@ function ProfileSection() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header className="w-full bg-gradient-to-r from-[#18181b] via-[#23233a] to-[#18181b] py-10 px-4 border-b border-zinc-800">
-      <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+      <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
                 {/* Responsive Navbar */}
         <nav className="w-full">
           {/* Desktop Navbar */}
@@ -539,22 +539,26 @@ function ProfileSection() {
             </div>
           )}
         </nav>
-        {/* Avatar with gradient glow */}
-        <div className="relative w-40 h-40 mx-auto mb-6 mt-6  ">
-          <div className="absolute inset-0 bg-black rounded-full"></div>
-          <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-black shadow-2xl z-10">
-            <img
-              src={profile.avatar}
-              alt={profile.name}
-              className="object-cover absolute h-full w-full left-0 top-0 right-0 bottom-0"
-              style={{ color: 'transparent', background: 'black' }}
-            />
-          </div>
-        </div>
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">{profile.name}</h1>
-        <h2 className="text-base md:text-lg lg:text-xl text-purple-200 mb-4 font-medium">{profile.title}</h2>
-                {/* <h2 className="text-base md:text-lg lg:text-xl text-purple-200 mb-4 font-medium" style={{color : 'lightgray'}}>{`[ ${profile.techstack} ]`}</h2> */}
+        <div>
 
+          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8 w-full max-w-7xl mx-auto lg:my-4 p-4">
+  {/* Profile Section */}
+  <div className="flex-0.4 w-full lg:w-1/3 rounded-2xl p-6 text-center">
+    <div className="relative lg:w-50 lg:h-50 w-40 h-40 mx-auto mb-6 mt-6">
+      <div className="absolute inset-0 bg-black rounded-full"></div>
+      <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-black shadow-2xl z-10">
+        <img
+          src={profile.avatar}
+          alt={profile.name}
+          className="object-cover absolute h-full w-full left-0 top-0 right-0 bottom-0"
+          style={{ color: "transparent", background: "black" }}
+        />
+      </div>
+    </div>
+    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">{profile.name}</h1>
+    <h2 className="text-base md:text-lg lg:text-xl text-purple-200 mb-4 font-medium">
+      {profile.title}
+    </h2>
 
               {/* Social links */}
         <div className="flex justify-center mb-4">
@@ -579,36 +583,29 @@ function ProfileSection() {
             </a>
           </div>
         </div>
-        {/* Professional summary card */}
-        <div className="w-full max-w-7xl mx-auto card bg-[#23233a] rounded-2xl shadow-2xl border border-zinc-800 p-4 sm:p-8 mb-4 sm:mb-8 mt-2 sm:mt-4 animate-fade-in-up">
-          <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">{summary.title}</h3>
-          {summary.paragraphs.map((text, idx) => (
-            <p
-              key={idx}
-              className={`text-zinc-400 text-sm sm:text-base ${idx === summary.paragraphs.length - 1 ? 'mb-4 sm:mb-8' : 'mb-3 sm:mb-6'} leading-relaxed`}
-            >
-              {text}
-            </p>
-          ))}
-          {/* <div className="flex flex-col sm:flex-row gap-4">
-            <a href={summary.resumeUrl} download className="btn btn-primary flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg px-5 py-3 font-semibold transition shadow-lg" tabIndex={0}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg>
-              Download Resume
-            </a>
-            <a href={summary.linkedinUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline flex-1 flex items-center justify-center gap-2 border border-blue-400 text-blue-400 hover:bg-blue-900/30 rounded-lg px-5 py-3 font-semibold transition shadow-lg" tabIndex={0} style={{ transform: 'none' }}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              LinkedIn
-            </a>
-                       <a href={summary.resumeUrl} download className="btn btn-primary flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg px-5 py-3 font-semibold transition shadow-lg" tabIndex={0}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg>
-              Download Resume
-            </a>
-                       <a href={summary.resumeUrl} download className="btn btn-primary flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg px-5 py-3 font-semibold transition shadow-lg" tabIndex={0}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg>
-              Download Resume
-            </a>
-          </div> */}
+  </div>
+
+  {/* Professional Summary Section */}
+  <div className="flex-1 w-full lg:w-2/3 card bg-[#23233a] rounded-2xl shadow-2xl border border-zinc-800 p-6">
+    <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">{summary.title}</h3>
+    {summary.paragraphs.map((text, idx) => (
+      <p
+        key={idx}
+        className={`text-zinc-400 text-sm sm:text-base leading-relaxed ${
+          idx === summary.paragraphs.length - 1
+            ? "mb-4 sm:mb-8"
+            : "mb-3 sm:mb-6"
+        }`}
+      >
+        {text}
+      </p>
+    ))}
+  </div>
+</div>
+
+      
         </div>
+
 
 
       </div>
@@ -722,20 +719,78 @@ export default function Home() {
         <section id="education" className="animate-fade-in-up" style={{ background: 'linear-gradient(135deg, #18181b 0%, #23233a 60%, #1a1a2e 100%)' }}>
           <EducationSection />
         </section>
+
+        
         {/* Contact Section */}
-        <section id="contact" className="py-16 px-4 sm:px-8 bg-[#18181b] border-t border-zinc-800 animate-fade-in-up">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white animate-fade-in-up">CONTACT</h2>
-            <p className="text-zinc-400 mb-4 animate-fade-in-up">Feel free to reach out for collaboration or opportunities!</p>
-            <div className="flex flex-col gap-2 items-center animate-fade-in-up">
-              <span className="text-zinc-300"><strong>Email:</strong> <a href={`mailto:${profile.email}`} className="text-blue-400 hover:underline">{profile.email}</a></span>
-              <span className="text-zinc-300"><strong>Phone:</strong> <a href={`tel:${profile.phone}`} className="text-blue-400 hover:underline">{profile.phone}</a></span>
-              <span className="text-zinc-300"><strong>LinkedIn:</strong> <a href={"https://www.linkedin.com/in/harshtadha"} className="text-blue-400 hover:underline">{"linkedin.com/in/harshtadha"}</a></span>
-              <span className="text-zinc-300"><strong>GitHub:</strong> <a href={"https://github.com/harshtadha"} className="text-blue-400 hover:underline">{"github.com/harshtadha"}</a></span>
-              <span className="text-zinc-300"><strong>{"Location:    "}</strong> {profile.location}</span>
-            </div>
-          </div>
-        </section>
+<section
+  id="contact"
+  className="py-16 px-4 sm:px-8 bg-black border-t border-zinc-800 animate-fade-in-up"
+>
+  <div className="max-w-4xl mx-auto">
+    {/* Heading */}
+    <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white animate-fade-in-up">
+      CONTACT ME
+    </h2>
+    <p className="text-zinc-400 mb-8 animate-fade-in-up">
+      Feel free to reach out for collaboration or opportunities!
+    </p>
+
+    {/* Two-column layout */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fade-in-up">
+      {/* Left Column */}
+      <div className="flex flex-col gap-2 text-left">
+        <span className="text-zinc-300">
+          <strong>Email:</strong>{" "}
+          <a
+            href={`mailto:${profile.email}`}
+            className="text-blue-400 hover:underline"
+          >
+            {profile.email}
+          </a>
+        </span>
+        <span className="text-zinc-300">
+          <strong>Phone:</strong>{" "}
+          <a
+            href={`tel:${profile.phone}`}
+            className="text-blue-400 hover:underline"
+          >
+            {profile.phone}
+          </a>
+        </span>
+        <span className="text-zinc-300">
+          <strong>Location:</strong> <span className="text-blue-400">{profile.location}</span>
+        </span>
+      </div>
+
+      {/* Right Column */}
+      <div className="flex flex-col gap-2 text-left">
+        <span className="text-zinc-300">
+          <strong>LinkedIn:</strong>{" "}
+          <a
+            href="https://www.linkedin.com/in/harshtadha"
+            className="text-blue-400 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            linkedin.com/in/harshtadha
+          </a>
+        </span>
+        <span className="text-zinc-300">
+          <strong>GitHub:</strong>{" "}
+          <a
+            href="https://github.com/harshtadha"
+            className="text-blue-400 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github.com/harshtadha
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
       </main>
       {modalImages && (
         <ImageModal
