@@ -118,11 +118,13 @@ function ExperienceSection() {
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-1 sm:gap-0">
 
                   <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                    <div className="inline-block bg-white/5 px-5 backdrop-blur-sm px-3 py-1 rounded-md mb-5 mt-2 border border-zinc-700">
                     <span className="text-base sm:text-lg font-bold text-white mr-0 sm:mr-2 font-sans">{exp.title}</span>
+                    </div>
                     <span className="text-xs sm:text-base text-zinc-400 font-semibold font-sans">@ {exp.company}{exp.location ? `, ${exp.location}` : ''}</span>
                   </div>
                   {/* Time frame visually highlighted */}
-                  <span className="text-xs sm:text-base font-semibold px-2 py-1 rounded bg-blue-900/40 text-blue-200 border border-blue-800 mt-1 sm:mt-0 whitespace-nowrap font-sans">
+                  <span className="text-xs sm:text-base font-semibold px-2 py-1 rounded bg-blue-90/40 text-blue-200 border border-zinc-700 mt-1 sm:mt-0 whitespace-nowrap font-sans">
                     {exp.period}
                   </span>
                 </div>
@@ -160,11 +162,13 @@ function ExperienceSection() {
               <div className="bg-gradient-to-br from-[#23233a] via-[#1e293b] to-[#0f172a] rounded-xl shadow-2xl p-4 sm:p-6 mb-2 border border-zinc-900 relative z-20" style={cardVars}>
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-1 sm:gap-0">
                     <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                    <div className="inline-block bg-white/5 px-5 backdrop-blur-sm px-3 py-1 rounded-md mb-5 mt-2 border border-zinc-700">
                       <span className="text-base sm:text-lg font-bold text-white mr-0 sm:mr-2 font-sans">{exp.title}</span>
+                      </div>
                       <span className="text-xs sm:text-base text-zinc-400 font-semibold font-sans">@ {exp.company}{exp.location ? `, ${exp.location}` : ''}</span>
                     </div>
                     {/* Time frame visually highlighted */}
-                    <span className="text-xs sm:text-base font-semibold px-2 py-1 rounded bg-blue-900/40 text-blue-200 border border-blue-800 mt-1 sm:mt-0 whitespace-nowrap font-sans">
+                    <span className="text-xs sm:text-base font-semibold px-2 py-1 rounded bg-blue-90/40 text-blue-200 border border-zinc-700proca mt-1 sm:mt-0 whitespace-nowrap font-sans">
                       {exp.period}
                     </span>
                   </div>
@@ -271,19 +275,19 @@ function ImageModal({ images, initialIndex, onClose }: ImageModalProps) {
         {images.length > 1 && (
           <>
             <button
-              className="absolute left-0 top-1/2 -translate-y-1/2 text-white text-4xl bg-zinc-900/80 rounded-full px-3 py-1 hover:bg-zinc-800 transition-colors shadow-lg border border-zinc-700"
+              className="absolute left-0 top-1/2 -translate-y-1/2 text-white text-4xl rounded-full lg:px-1 px-6 py-1 hover:bg-zinc-800 transition-colors"
               onClick={() => setCurrent(c => (c > 0 ? c - 1 : c))}
               aria-label="Previous image"
-              style={{ left: '-2.5rem' }}
+              style={{ left: '-3.5rem' }}
               disabled={current === 0}
             >
               &#8592;
             </button>
             <button
-              className="absolute right-0 top-1/2 -translate-y-1/2 text-white text-4xl bg-zinc-900/80 rounded-full px-3 py-1 hover:bg-zinc-800 transition-colors shadow-lg border border-zinc-700"
+              className="absolute right-0 top-1/2 -translate-y-1/2 text-white text-4xl rounded-full lg:px-1 px-6 py-1 hover:bg-zinc-800 transition-colors"
               onClick={() => setCurrent(c => (c < images.length - 1 ? c + 1 : c))}
               aria-label="Next image"
-              style={{ right: '-2.5rem' }}
+              style={{ right: '-3.5rem' }}
               disabled={current === images.length - 1}
             >
               &#8594;
@@ -395,7 +399,12 @@ function Card({ project, onImageClick }: { project: Project; onImageClick: (imag
       tabIndex={0}
     >
       <div className="absolute inset-0 rounded-2xl pointer-events-none group-hover:scale-[1.03] group-hover:shadow-[0_12px_40px_0_rgba(0,255,255,0.25),0_2px_16px_0_#0ff_inset] transition-transform transition-shadow duration-300 z-[-1]" />
-      <div className="w-full">
+      <div className="w-full mb-5">
+<div className="inline-block bg-black/30 px-5backdrop-blur-sm px-3 py-1 rounded-md mb-5 mt-2 border border-zinc-700">
+  <h3 className="lg:text-2xl text-xl font-semibold text-white">
+    {project.title}
+  </h3>
+</div>
         <div className="flex gap-2 overflow-x-auto py-2 px-2">
           {project.screenshots.map((src, i) => (
             <img
@@ -413,32 +422,34 @@ function Card({ project, onImageClick }: { project: Project; onImageClick: (imag
             />
           ))}
         </div>
-        {hasMultiple && (
-          <div className="flex justify-center mt-2 gap-2">
-            {project.screenshots.map((_, i) => (
-              <span
-                key={i}
-                className={`inline-block w-3 h-3 rounded-full border-2 border-zinc-800 shadow-md transition-colors duration-200 ${activeScreenshot === i ? 'bg-blue-400 scale-110' : 'bg-zinc-600'}`}
-              ></span>
-            ))}
-          </div>
-        )}
+{hasMultiple && (
+  <div className="hidden sm:flex justify-center mt-2 gap-2">
+    {project.screenshots.map((_, i) => (
+      <span
+        key={i}
+        className={`inline-block w-3 h-3 rounded-full border-2 border-zinc-800 shadow-md transition-colors duration-200 ${
+          activeScreenshot === i ? 'bg-blue-400 scale-110' : 'bg-zinc-600'
+        }`}
+      ></span>
+    ))}
+  </div>
+)}
       </div>
       <div className="flex-1 flex flex-col px-2 py-2">
-        <h3 className="text-xl font-semibold text-white mb-2">
+        {/* <h3 className="text-xl font-semibold text-white mb-5 mt-2">
           {project.title}
-        </h3>
-        <div className="flex flex-wrap gap-2 mb-2">
+        </h3> */}
+        <div className="flex flex-wrap gap-2 mb-3">
           {project.tech.map((tech, i) => (
             <span
               key={i}
-              className="bg-zinc-700 text-xs font-medium px-2 py-1 rounded-full text-zinc-100"
+              className="bg-zinc-800 text-xs font-medium px-2 py-1 rounded-full text-zinc-100"
             >
               {tech}
             </span>
           ))}
         </div>
-        <p className="text-zinc-400 mb-2">
+        <p className="text-zinc-400 mb-5">
           {project.description}
         </p>
         <div className="flex flex-wrap gap-2 mt-auto">
@@ -469,7 +480,7 @@ function Card({ project, onImageClick }: { project: Project; onImageClick: (imag
               href={project.playstore}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold shadow-md border border-gray-300 transition-colors text-base"
+              className="inline-flex items-center gap-2 px-1 py-1 rounded-lg bg-white hover:bg-gray-100 text-gray-900 font-semibold shadow-md border border-gray-300 transition-colors text-base"
               style={{ minWidth: '120px', justifyContent: 'center' }}
             >
               {/* Google Play Store icon SVG */}
@@ -482,7 +493,7 @@ function Card({ project, onImageClick }: { project: Project; onImageClick: (imag
               href={project.appstore}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-black hover:bg-zinc-800 text-white font-semibold shadow-md border border-zinc-700 transition-colors text-base"
+              className="inline-flex items-center gap-2 px-1 py-1 rounded-lg bg-black hover:bg-zinc-800 text-white font-semibold shadow-md border border-zinc-700 transition-colors text-base"
               style={{ minWidth: '120px', justifyContent: 'center' }}
             >
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" className="inline-block"><path d="M17.564 13.307c-.02-2.14 1.75-3.163 1.83-3.213-1-1.46-2.56-1.66-3.11-1.68-1.32-.13-2.58.77-3.25.77-.67 0-1.7-.75-2.8-.73-1.44.02-2.77.84-3.51 2.13-1.5 2.6-.38 6.45 1.08 8.56.72 1.04 1.58 2.2 2.71 2.16 1.09-.04 1.5-.7 2.81-.7 1.31 0 1.67.7 2.81.68 1.16-.02 1.89-1.06 2.6-2.1.82-1.19 1.16-2.34 1.18-2.4-.03-.01-2.26-.87-2.28-3.45zm-2.13-6.32c.6-.73 1-1.75.89-2.77-.86.03-1.89.57-2.5 1.3-.55.65-1.03 1.7-.85 2.7.99.08 1.97-.5 2.46-1.23z"/></svg>
@@ -524,14 +535,29 @@ function ProfileSection() {
             <Link href="#contact" className="text-zinc-300 hover:text-blue-400 font-semibold transition-colors">CONTACT</Link>
           </div>
           {/* Mobile Navbar */}
-          <div className="md:hidden flex justify-between items-center w-full mb-4">
-            <span className="text-white font-bold text-lg"></span>
-            <button onClick={() => setMenuOpen(m => !m)} className="text-zinc-300 hover:text-blue-400 focus:outline-none text-3xl">
-              <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <div className="relative md:hidden flex justify-between items-center w-full mb-4">
+            <button onClick={() => setMenuOpen(m => !m)}  className="
+    fixed top-4 right-4 z-50 
+      text-zinc-300 hover:text-blue-400 
+      focus:outline-none text-3xl
+      bg-black/50 backdrop-blur-sm p-2 rounded-lg shadow-lg
+      transition-colors
+  " aria-label="Menu">
+              <svg  width="32"
+      height="32"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
           </div>
           {menuOpen && (
-            <div className="md:hidden flex flex-col gap-4 bg-[#23233a] rounded-xl shadow-lg p-6 absolute left-1/2 -translate-x-1/2 top-20 w-6/12 z-50 border border-zinc-700 animate-fade-in-down" style={{ backgroundColor: 'black', right: '1rem',alignSelf: 'flex-end' }}>
+            <div className={`
+      fixed right-4 top-16 w-56 bg-black/90 border border-zinc-700 rounded-xl
+      shadow-lg flex flex-col gap-4 p-4 z-40 mt-3
+      transform origin-top-right transition-all duration-300
+      ${menuOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"}
+    `}>
               <Link href="#about" className="text-zinc-300 hover:text-blue-400 font-semibold transition-colors text-lg" onClick={() => setMenuOpen(false)}>ABOUT</Link>
               <Link href="#skills" className="text-zinc-300 hover:text-blue-400 font-semibold transition-colors text-lg" onClick={() => setMenuOpen(false)}>SKILLS</Link>
               <Link href="#projects" className="text-zinc-300 hover:text-blue-400 font-semibold transition-colors text-lg" onClick={() => setMenuOpen(false)}>PROJECTS</Link>
@@ -649,7 +675,7 @@ export default function Home() {
             }}
           >
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-lg sm:text-3xl font-bold mb-4 sm:mb-6 text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-fade-in-up font-sans">
+              <h2 className="text-3xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-fade-in-up font-sans">
                 SKILLS
               </h2>
               <div className="flex flex-wrap gap-2 justify-center mb-10 animate-fade-in-up">

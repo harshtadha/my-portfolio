@@ -59,7 +59,7 @@ export const projects: Project[] = [
 
   },
   {
-    title: "Deal-Mart ( Web and Mobile App )",
+    title: "Deal-Mart (Web and Mobile App)",
     description: "Deal Mart is a modern marketplace web application built with React, featuring a complete authentication flow (login, signup, resend code, logout) and seamless API integration for real-time data. It includes a dynamic home page displaying marketplace listings, a personalized user dashboard showing account information and activities, and a support page explaining the platform. The project demonstrates strong frontend development skills with secure authentication, state management, and clean UI design.",
     details: "This application allows users to browse products, add to cart, checkout with payment integration, and track orders. Built for both Android and iOS with a scalable backend on Firebase and GCP.",
     screenshots: [ 
