@@ -27,8 +27,8 @@ export default function EducationSection() {
                     <span className="text-base sm:text-lg font-bold text-white mr-0 sm:mr-2">Master of Science ( Msc ) - Computational Science</span>
                     <span className="text-xs sm:text-sm text-zinc-400 font-semibold">Laurentian University, Canada</span>
                   </div>
-                    <span className="text-xs sm:text-sm font-semibold px-2 py-1 rounded bg-blue-900/40 text-blue-200 border border-blue-800 mt-1 sm:mt-0 whitespace-nowrap">
-                  Jan 2025</span>
+                  <span className="text-xs sm:text-sm font-semibold px-2 py-1 rounded bg-blue-900/40 text-blue-200 border border-blue-800 mt-1 sm:mt-0 whitespace-nowrap">
+                  </span>
                 </div>
                 <div className="text-zinc-300 text-xs sm:text-sm leading-relaxed">
                   Relevant Courses: SDLC, Machine Learning, Python, AI, Cloud Computing, Mobile Software Architecture, Data Engineering
@@ -50,7 +50,7 @@ export default function EducationSection() {
                     <span className="text-xs sm:text-sm text-zinc-400 font-semibold">Gujarat Technological University</span>
                   </div>
                     <span className="text-xs sm:text-sm font-semibold px-2 py-1 rounded bg-blue-900/40 text-blue-200 border border-blue-800 mt-1 sm:mt-0 whitespace-nowrap">
-                  Aug 2020</span>
+                  </span>
                 </div>
               </div>
             </div>
