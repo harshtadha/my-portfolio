@@ -11,7 +11,7 @@ export const experiences: Experience[] = [
   {
     title: 'Full Stack Developer - Mobile & Web Development',
     company: 'Nisum Canada Inc.',
-    period: 'May 2024 - Jaly 2025',
+    period: 'May 2024 - August 2025',
     section: 'Work',
     description: [
       'Directed end-to-end web and mobile development, including architecture design, feature implementation, and maintenance.',
