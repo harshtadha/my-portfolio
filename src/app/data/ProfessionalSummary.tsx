@@ -10,6 +10,6 @@ const summary = {
 
   "I have strong experience in production-level problem solving, performance optimization, testing, debugging, and managing CI/CD pipelines within Agile teams. I collaborate closely with product managers, designers, stakeholders, and clients to deliver user-focused, high-quality solutions.",
 
-  "Backed by a Master’s degree in Computer Science (AI/ML & Data Science), I combine technical depth, AI expertise, and practical development experience to consistently deliver software that drives real business value.", 
+  "Backed by a Master’s degree in Computer Science (AI/ML & Data Science), I combine technical depth, AI expertise, and practical development experience to consistently deliver software that drives real business value."]
 }
 export default summary;
